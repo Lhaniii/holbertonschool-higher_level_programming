@@ -12,15 +12,15 @@ Test for success
 Infini.
 <BLANKLINE>
 
->>> text_indentation("Zamdane.")
+>>> text_indentation("Zamdane	.")
 Zamdane.
 <BLANKLINE>
 
->>> text_indentation("Fleurs.")
+>>> text_indentation("		Fleurs.")
 Fleurs.
 <BLANKLINE>
 
->>> text_indentation("Zamdane.Meilleur.")
+>>> text_indentation("		Zamdane.   	Meilleur.	")
 Zamdane.
 <BLANKLINE>
 Meilleur.
