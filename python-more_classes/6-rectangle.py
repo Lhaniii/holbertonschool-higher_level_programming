@@ -5,14 +5,17 @@
 class Rectangle:
     """Define rectangle."""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialize a rectangle."""
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """set width of rectangle"""
+        """set width of rectange"""
         return self.__width
 
     @width.setter
@@ -25,7 +28,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """set height of rectangle"""
+        """set height of rectange"""
         return self.__height
 
     @height.setter
@@ -65,5 +68,8 @@ class Rectangle:
         return (rect)
      
     def __del__(self):
-        """print mess for del of rectangle"""
+        """print mess for del of rectange"""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+
