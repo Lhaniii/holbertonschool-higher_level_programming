@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Define a class for inherited cheking object"""
 
