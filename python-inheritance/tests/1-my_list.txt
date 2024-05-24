@@ -37,11 +37,11 @@ Test for success
 >>> my_list = ("Zamdane")
 >>> my_list = ("Infini")
 >>> print(my_list)
-['Zamdane', 'Infini']
+["Zamdane", "Infini"]
 >>> my_list.print_sorted()
-['Zamdane', 'Infini']
+["Zamdane", "Infini"]
 >>> print(my_list)
-['Zamdane', 'Infini']
+["Zamdane", "Infini"]
 
 >>> my_list = MyList()
 >>> print(my_list)
