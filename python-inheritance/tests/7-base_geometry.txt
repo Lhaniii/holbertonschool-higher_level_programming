@@ -30,3 +30,7 @@ TypeError: None must be an integer
 >>> bg.area()
 TraceBack (most recent call last):
 TypeError: area() is not implemented
+
+>>> bg.integer_validator("Zamdane, "Infini")
+Traceback (most recent call last):
+TypeError: name bust be an integer
