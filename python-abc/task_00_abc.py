@@ -10,11 +10,10 @@ class Animal(ABC):
     def sound(self):
         pass
 
-
 class Dog(Animal):
     """define class Dog based of class Animal"""
     def sound(self):
-        return "bark"
+        return "Bark"
 
 class Cat(Animal):
     """define class cat based of class animal"""
