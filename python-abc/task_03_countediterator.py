@@ -3,8 +3,9 @@
 
 
 class CountedIterator:
-    """Define class countedIterator"""
+    """Define class countedIterator count number of iteration"""
     def __init__(self, some_iterable):
+        """init the counter for iteration"""
         self.iterator = iter(some_iterable)
         self.counter = 0
 
@@ -13,7 +14,7 @@ class CountedIterator:
         return self.counter
 
     def __next__(self):
-        """Override the next"""
+        """the next method to increment counter"""
         try:
             i = next(self.iterator)
             self.counter =+ 1
