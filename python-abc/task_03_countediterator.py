@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define class CountedIterator"""
 
+
 class CountedIterator:
     """Define class countedIterator"""
     def __init__(self, some_iterable):
