@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 class VerboseList(list):
-    """define Verboselist"""
+    """
+    define Verboselist"""
     def append(self, item):
         """Append item in the list and print message"""
         super().append(item)
