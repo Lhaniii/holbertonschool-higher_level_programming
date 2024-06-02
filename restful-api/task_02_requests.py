@@ -17,8 +17,7 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """def func to fetch and save posts"""
-    request = request.get("https://jsonplaceholder.typicode.com/posts")
-    
+    request = request.get("https://jsonplaceholder.typicode.com/posts")    
     if request.status_code == 200:
         posts = request.json()
         post_list = [{"id": post['id'], 'title': post['title'],
