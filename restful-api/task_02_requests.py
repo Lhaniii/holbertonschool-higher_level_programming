@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import requests
 import json
+import csv
 
 
 def fetch_and_print_posts():
@@ -15,7 +16,7 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    """Function to fetch and save posts"""
+    """def func to fetch and save posts"""
     request = request.get("https://jsonplaceholder.typicode.com/posts")
     
     if request.status_code == 200:
