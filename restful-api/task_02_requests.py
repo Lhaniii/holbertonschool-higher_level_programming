@@ -21,7 +21,7 @@ def fetch_and_save_posts():
     if request.status_code == 200:
         posts = request.json()
         post_list = [{"id": post['id'], 'title': post['title'],
-            'body': posrt['body']} for post in posts]
+            'body': post['body']} for post in posts]
         csv_file = 'posts.csv'
         with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.DicWriter(file, fieldnames=['id', 'title', 'body'])
