@@ -12,18 +12,18 @@ def fetch_and_print_posts():
     if request.status_code == 200:
         posts = request.json()
         for post in posts:
-            print(post["title"])
+            print(post['title'])
 
 
 def fetch_and_save_posts():
     """def func to fetch and save posts"""
-    request = request.get("https://jsonplaceholder.typicode.com/posts")    
+    request = requests.get("https://jsonplaceholder.typicode.com/posts")    
     if request.status_code == 200:
         posts = request.json()
-        post_list = [{"id": post['id'], 'title': post['title'],
+        post_list = [{'id': post['id'], 'title': post['title'],
             'body': post['body']} for post in posts]
         csv_file = 'posts.csv'
         with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.DicWriter(file, fieldnames=['id', 'title', 'body'])
+            writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
             writer.writeheader()
             writer.writerows(post_list)
