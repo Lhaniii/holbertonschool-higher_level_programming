@@ -1,29 +1,30 @@
-#!/usr/bin/python3
 import requests
-import json
 import csv
 
-
 def fetch_and_print_posts():
-    """Def functions to fetch and print"""
-    request = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print("Status code: {}".format(request.status_code))
+    # Fetch response
+    response = requests.get('https://jsonplaceholder.typicode.com/posts')
 
-    if request.status_code == 200:
-        posts = request.json()
+    # Print response status
+    print(f"Status Code: {response.status_code}")
+
+    # Print page title if response is OK
+    if response.status_code == 200:
+        posts = response.json()
         for post in posts:
             print(post['title'])
 
-
 def fetch_and_save_posts():
-    """def func to fetch and save posts"""
-    request = requests.get("https://jsonplaceholder.typicode.com/posts")    
-    if request.status_code == 200:
-        posts = request.json()
-        post_list = [{'id': post['id'], 'title': post['title'],
-            'body': post['body']} for post in posts]
-        csv_file = 'posts.csv'
-        with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
+    # Fetch response
+    response = requests.get('https://jsonplaceholder.typicode.com/posts')
+
+    # If response is OK, save data to csv
+    if response.status_code == 200:
+        posts = response.json()
+        data_to_save = [{'id': post['id'], 'title': post['title'], 'body': post['body']} for post in posts]
+
+        # Save to CSV
+        with open('posts.csv', mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
             writer.writeheader()
-            writer.writerows(post_list)
+            writer.writerows(data_to_save)
